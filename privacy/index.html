@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Privacy: TerraGen</title>
+    <meta name="description" content="What TerraGen and this website do with your data: the app makes no network call you did not ask for, machine learning runs on your device, and the site sets no cookies and loads no trackers.">
+    <meta name="theme-color" content="#e5f15c">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/fjalla-one/files/fjalla-one-latin-400-normal.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/barlow/files/barlow-latin-500-normal.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/barlow/files/barlow-latin-700-normal.woff2">
+    <link rel="stylesheet" href="/src/styles.css">
+    <noscript><style>.bar__menu{display:none}.nav{display:flex}</style></noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!--#header-->
+
+    <main id="main" class="page">
+      <div class="wrap">
+        <p class="eyebrow">Privacy</p>
+        <h1>Your pictures stay on your computer</h1>
+        <div class="prose">
+          <p class="lede">
+            TerraGen is local first and private by default. This page says what the app does,
+            what this website does, and what is not settled yet.
+          </p>
+
+          <h2>The app</h2>
+          <ul>
+            <li>
+              <strong>No network call without your say-so.</strong> TerraGen does not phone home.
+              It has no telemetry, no analytics and no account. A project, a photograph or a
+              drawing is never sent anywhere unless you send it.
+            </li>
+            <li>
+              <strong>Machine learning runs on your device.</strong> The subject, depth and line
+              models run on your own computer, in the desktop app and in the browser build alike.
+              Your pictures are never uploaded to be processed.
+            </li>
+            <li>
+              <strong>Your signature stays on your computer.</strong> It is kept in the app's data
+              folder, or in your browser's storage in the web build. A project that uses it holds
+              a copy, which goes wherever you send that project.
+            </li>
+            <li>
+              <strong>A Pro licence is checked offline.</strong> The key is verified on your
+              computer. The app does not contact a server to check it.
+            </li>
+          </ul>
+
+          <h2>When the app does use the network</h2>
+          <p>
+            Only when you ask, and each time it shows you what will be sent before anything is.
+          </p>
+          <ul>
+            <li>
+              <strong>Downloading a model.</strong> A model file is fetched once, when you ask for
+              it, from the address TerraGen shows you. The request carries no picture.
+            </li>
+            <li>
+              <strong>Fetching a terrain or a map.</strong> The request says which area you chose,
+              and goes to the data's public source: terrain tiles, OpenStreetMap's Overpass
+              service for map data, Nominatim for a place-name search, and a map tile server for
+              the area picker. Those services see your IP address and the area you asked for, as
+              they would from any map.
+            </li>
+            <li>
+              <strong>Sending a job to your plotter.</strong> An upload goes to the machine's
+              address on your own network, and nowhere else.
+            </li>
+          </ul>
+
+          <h2>This website</h2>
+          <ul>
+            <li>No cookies.</li>
+            <li>No analytics, no trackers, no advertising.</li>
+            <li>No third-party scripts. The fonts are served from this site, not from a font service.</li>
+            <li>No forms, and no account to sign in to.</li>
+          </ul>
+
+          <h2>Not settled yet</h2>
+          <!-- TODO(REL-5): name the host and what its logs keep, the shop and what it holds, and a contact address, once they exist (docs/07-M6-PLAN.md §4.5). -->
+          <p class="note">
+            This statement is a draft. TerraGen 1.0 is not released, and three things it must name
+            do not exist yet: the company that hosts this site and what its server logs keep, the
+            shop that will sell Pro keys and the payment details it will handle, and an address to
+            write to. They will be added here before launch.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!--#footer-->
+  </body>
+</html>

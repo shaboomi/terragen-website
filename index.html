@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TerraGen: the studio for pen-plotter art</title>
+    <meta name="description" content="TerraGen turns a photo, a script, a map or a sound into lines a pen can draw, previews the ink at true width, runs the plotter, and makes signed, numbered editions.">
+    <meta name="theme-color" content="#e5f15c">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/fjalla-one/files/fjalla-one-latin-400-normal.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/barlow/files/barlow-latin-500-normal.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/barlow/files/barlow-latin-700-normal.woff2">
+    <link rel="stylesheet" href="/src/styles.css">
+    <noscript><style>.bar__menu{display:none}.nav{display:flex}.wall__controls{display:none}</style></noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <!--#header-->
+
+    <main id="main">
+      <!-- 1. Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero__in">
+          <div class="hero__copy">
+            <p class="eyebrow">The studio for pen-plotter art</p>
+            <h1 id="hero-title">From photo, code, map or sound to a signed, editioned print</h1>
+            <p class="lede">
+              TerraGen turns a picture, a script, a place or a recording into lines a pen can draw.
+              It shows you the ink before you plot, runs the machine, then numbers, signs and
+              certifies the edition.
+            </p>
+            <div class="actions">
+              <a class="btn btn--lime" href="#download"><span>Download</span></a>
+              <a class="btn btn--ghost" href="{{app}}"><span>Try in browser</span></a>
+              <a class="btn btn--pink" href="#pricing"><span>See Pro</span></a>
+            </div>
+            <p class="hero__note">Opening, drawing, exporting and plotting are free. No account, no sign-in.</p>
+          </div>
+          <figure class="sheet sheet--hero">
+            <div class="sheet__paper">
+              <!--#hero-->
+            </div>
+            <figcaption class="sheet__block">
+              <span>1/1</span>
+              <span>Harmonograph, seed 1</span>
+              <span>One stroke, 0.3 mm</span>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="wrap">
+          <a class="explore" href="#styles">
+            Explore
+            <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- 2. Styles -->
+      <section id="styles" class="band" aria-labelledby="styles-title">
+        <div class="wrap">
+          <p class="eyebrow">Create</p>
+          <h2 id="styles-title">{{styles}} styles, one carousel</h2>
+          <p class="lede">
+            Pick a style, move a slider, plot. Some draw from a photograph, some from mathematics,
+            some from your own code, and some from a terrain, a map, a sound or a 3D model.
+          </p>
+
+          <ul class="inputs">
+            <li>
+              <figure class="sheet">
+                <div class="sheet__paper"><x-img name="hedcut" sizes="(min-width: 900px) 260px, 45vw" alt="A portrait drawn in the Hedcut style: dots in the light, swelling lines in the dark."></div>
+                <figcaption class="sheet__block"><span>A photo</span><span>Hedcut</span></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="sheet">
+                <div class="sheet__paper"><x-img name="turtletree" sizes="(min-width: 900px) 260px, 45vw" alt="A tree whose every branch forks into two shorter ones, drawn by a script."></div>
+                <figcaption class="sheet__block"><span>Your code</span><span>Turtle tree</span></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="sheet">
+                <div class="sheet__paper"><x-img name="ridgelines" sizes="(min-width: 900px) 260px, 45vw" alt="A terrain drawn as rows of profile lines, the near hills hiding the far ones."></div>
+                <figcaption class="sheet__block"><span>A place</span><span>Ridgelines</span></figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="sheet">
+                <div class="sheet__paper"><x-img name="spectrogram" sizes="(min-width: 900px) 260px, 45vw" alt="A piece of music drawn as a spectrogram: rows of lines lifted into peaks where the sound is loud."></div>
+                <figcaption class="sheet__block"><span>A sound</span><span>Spectrogram</span></figcaption>
+              </figure>
+            </li>
+          </ul>
+
+          <div class="wall__head">
+            <ul class="counts" aria-label="Styles by kind">
+              <li><strong>{{styles:image-tone}}</strong> from a photo</li>
+              <li><strong>{{styles:generative}}</strong> generative</li>
+              <li><strong>{{styles:scripted}}</strong> scripted</li>
+              <li><strong>{{styles:sources}}</strong> from a source</li>
+            </ul>
+            <div class="wall__controls">
+              <button class="chip" type="button" data-wall-pause>Pause</button>
+              <button class="chip" type="button" data-wall-names aria-pressed="false">Show names</button>
+            </div>
+          </div>
+        </div>
+        <div class="wall" data-wall>
+          <!--#wall-->
+        </div>
+        <div class="wrap">
+          <p class="fine">
+            Every tile is TerraGen's own output: the reference picture of each built-in style, the
+            ones its tests compare against on every change.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. How it works -->
+      <section id="how" class="band band--paper" aria-labelledby="how-title">
+        <div class="wrap">
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-title">Four stages, one window</h2>
+          <ol class="stages">
+            <li>
+              <span class="stages__no" aria-hidden="true">01</span>
+              <h3>Create</h3>
+              <p>Choose a style from the carousel, or open its graph or its code. Sources, masks and pens stay live, so you can change anything at any time.</p>
+            </li>
+            <li>
+              <span class="stages__no" aria-hidden="true">02</span>
+              <h3>Prepare</h3>
+              <p>One preflight checks the job against your paper, pens and machine: ink risk, plot time, pen-up travel and the edges of the bed.</p>
+            </li>
+            <li>
+              <span class="stages__no" aria-hidden="true">03</span>
+              <h3>Plot</h3>
+              <p>Send it over Wi-Fi or save G-code, one file per pen. Watch progress, pause, change pens, and pick up a job where it stopped.</p>
+            </li>
+            <li>
+              <span class="stages__no" aria-hidden="true">04</span>
+              <h3>Publish <span class="pro">Pro</span></h3>
+              <p>Number the edition, sign it, and export every piece with its certificate, its mockup and its files.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 4. Ink is the truth -->
+      <section id="ink" class="band" aria-labelledby="ink-title">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">Prepare</p>
+            <h2 id="ink-title">Ink is the truth</h2>
+            <p class="lede">
+              If the preview lies, that is a bug. Every line on screen is drawn at the width of the
+              pen that will draw it, so what you approve is what the plotter makes.
+            </p>
+            <dl class="features">
+              <div>
+                <dt>True pen width</dt>
+                <dd>A 0.3 mm fineliner and a 0.8 mm marker make different pictures. You see which one before the pen touches the paper.</dd>
+              </div>
+              <div>
+                <dt>Ink-risk heatmap</dt>
+                <dd>Amber where the ink nears what the paper takes, red where it is over. Thin the drawing or change the paper before it bleeds.</dd>
+              </div>
+              <div>
+                <dt>Time estimate</dt>
+                <dd>How long the job runs on your machine, pen by pen, before you start it.</dd>
+              </div>
+              <div>
+                <dt>Path optimisation</dt>
+                <dd>Strokes are reordered so the pen spends its time drawing. On a cross-hatched A4 portrait, pen-up travel fell from 14.3 m to 2.2 m.</dd>
+              </div>
+              <div>
+                <dt>Pen refresh</dt>
+                <dd>A pen that has drawn its rated distance is paused for a swap or sent to dip, between two strokes and never mid-line.</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="compare">
+            <figure>
+              <x-img name="ink-plain" sizes="(min-width: 900px) 520px, 92vw" alt="A close view of a scribbled drawing made with a 0.8 millimetre pen: the loops crowd together into near-solid black.">
+              <figcaption>The preview at true width: a 0.8 mm pen</figcaption>
+            </figure>
+            <figure>
+              <x-img name="ink-heat" sizes="(min-width: 900px) 520px, 92vw" alt="The same close view with the ink-risk heatmap: amber and red bands lie over the most crowded loops.">
+              <figcaption>The same sheet with the ink-risk heatmap</figcaption>
+            </figure>
+            <p class="fine">
+              Ink limits are estimates until you measure your own pens and papers. TerraGen says so
+              wherever it reports a risk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Graph and code -->
+      <section id="graph" class="band band--surface" aria-labelledby="graph-title">
+        <div class="wrap">
+          <p class="eyebrow">Create</p>
+          <h2 id="graph-title">Simple on top, infinite underneath</h2>
+          <p class="lede">
+            Every style in the carousel is a saved node graph. If you never open it, you never need
+            to know. If you do, you can change anything.
+          </p>
+
+          <div class="split split--media">
+            <figure class="shot">
+              <x-img name="graph" sizes="(min-width: 900px) 560px, 92vw" alt="TerraGen's graph editor: an image node feeds a tone node and a hatch node, and a gradient field is wired to the hatch's spacing.">
+              <figcaption>A gradient field driving the hatch spacing</figcaption>
+            </figure>
+            <dl class="features">
+              <div>
+                <dt>Node graph</dt>
+                <dd>Sources, fields, generators and pen layers as nodes. Rewire a style, then save it as one of your own and use it as a node in the next.</dd>
+              </div>
+              <div>
+                <dt>Fields</dt>
+                <dd>Bind a slider to the picture. Tone, noise, gradient or depth can drive spacing, angle or weight, point by point across the page.</dd>
+              </div>
+              <div>
+                <dt>Live sliders</dt>
+                <dd>Each parameter has a range, a unit and a sensible default. Move one and the page is drawn again.</dd>
+              </div>
+              <div>
+                <dt>The same lines every time</dt>
+                <dd>The same project and seed draw the same lines on every computer, so a piece can be plotted again years later.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="split split--media split--flip">
+            <div>
+              <h3>The code workspace</h3>
+              <p>
+                Write JavaScript and watch the page redraw as you type. A comment after a constant
+                turns it into a slider. This is the whole of Noise rings, one of the built-in styles:
+              </p>
+              <pre class="code" tabindex="0" aria-label="The script of the Noise rings style"><code>const rings = 36;    // min=3, max=100, step=1, How many rings
+const amount = 14;   // min=0, max=40, step=0.5, How far noise pushes a ring
+const grain = 1.1;   // min=0.2, max=3, step=0.05, Bumps round a ring
+const drift = 0.06;  // min=0, max=0.3, step=0.005, Change from ring to ring
+const hole = 0.12;   // min=0, max=0.6, step=0.01, Size of the empty middle
+const stretch = 1;   // min=0.4, max=1.6, step=0.05, Width against height
+
+const cx = page.x + page.width / 2;
+const cy = page.y + page.height / 2;
+const reach = Math.min(page.width, page.height) / 2 - 4 - amount;
+
+for (let i = 0; i &lt; rings; i++) {
+  const base = reach * (hole + ((1 - hole) * (i + 1)) / rings);
+  const points = [];
+  for (let s = 0; s &lt; 180; s++) {
+    const a = (s / 180) * 2 * Math.PI;
+    const n = noise(Math.cos(a) * grain + 20 + i * drift,
+                    Math.sin(a) * grain + 20 + i * drift);
+    const r = base + amount * n * (0.3 + (0.7 * (i + 1)) / rings);
+    points.push([cx + r * stretch * Math.cos(a), cy + r * Math.sin(a)]);
+  }
+  polyline(points, true);
+}</code></pre>
+            </div>
+            <figure class="sheet">
+              <div class="sheet__paper"><x-img name="noiserings" sizes="(min-width: 900px) 400px, 80vw" alt="Thirty-six rings round an empty middle, each pushed in and out by smooth noise."></div>
+              <figcaption class="sheet__block"><span>Scripted</span><span>Noise rings, seed 1</span><span>0.3 mm</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Plot -->
+      <section id="plot" class="band" aria-labelledby="plot-title">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">Plot</p>
+            <h2 id="plot-title">From the screen to the pen</h2>
+            <p class="lede">
+              TerraGen drives terraPen and other machines that run FluidNC or GRBL. Bring yours in
+              from its own settings file.
+            </p>
+            <dl class="features">
+              <div>
+                <dt>Wi-Fi upload</dt>
+                <dd>Send the job to a FluidNC machine's SD card over your own network and start it from TerraGen.</dd>
+              </div>
+              <div>
+                <dt>Live progress</dt>
+                <dd>Watch where the pen is in the drawing. Pause, resume or stop.</dd>
+              </div>
+              <div>
+                <dt>Resume a stopped job</dt>
+                <dd>A pen ran dry or the power went. Plot the rest from the stroke it reached.</dd>
+              </div>
+              <div>
+                <dt>One G-code file per pen</dt>
+                <dd>A drawing in three pens is three files, in plotting order, each checked against the bed.</dd>
+              </div>
+              <div>
+                <dt>Nothing moves unasked</dt>
+                <dd>Every upload and every plot asks first. Trace the job with the pen up before you commit ink.</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="plot-out">
+            <figure class="sheet sheet--small">
+              <div class="sheet__paper"><x-img name="cmy" sizes="(min-width: 900px) 300px, 60vw" alt="A portrait drawn as three crossed screens of lines in cyan, magenta and yellow pens."></div>
+              <figcaption class="sheet__block"><span>3 pens</span><span>CMY screens</span><span>A4</span></figcaption>
+            </figure>
+            <figure class="files">
+              <figcaption>What TerraGen wrote for that sheet</figcaption>
+              <ul>
+                <li>portrait-1-yellow-fineliner-0-3.g</li>
+                <li>portrait-2-magenta-fineliner-0-3.g</li>
+                <li>portrait-3-cyan-fineliner-0-3.g</li>
+              </ul>
+              <pre class="code code--small" tabindex="0" aria-label="The start of the first G-code file"><code>; TerraGen 0.1.0 - portrait-small
+; seed: 1
+; machine: terraPen A2 (Jackpot3)
+; paper: 210 x 297 mm at X0 Y0
+; pens: Yellow fineliner 0.3
+; bounds: X10 to X200, Y22.5 to Y272.5 (bed 594 x 420)
+; pen-down 20073 mm, pen-up 1933 mm, 231 lifts
+; estimated time: 11m 30s
+G21 ; mm
+G90 ; absolute
+G0 Z5
+; layer: Yellow (pen: Yellow fineliner 0.3)
+G0 X10 Y24.5
+G1 Z0 F1200
+G1 X200 Y24.5 F3000</code></pre>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Publish (Pro) -->
+      <section id="publish" class="band band--paper" aria-labelledby="publish-title">
+        <div class="wrap">
+          <p class="eyebrow">Publish <span class="pro">Pro</span></p>
+          <h2 id="publish-title">A signed edition of 25, ready for the fair</h2>
+          <p class="lede">
+            Publish turns one drawing into work you can sell. Every piece is numbered, signed and
+            certified, and pictured framed for the listing without a camera.
+          </p>
+
+          <ol class="journey">
+            <li>
+              <figure>
+                <div class="journey__pic journey__pic--sheet"><x-img name="piece-1" sizes="(min-width: 900px) 300px, 80vw" alt="Piece 1 of 25 of Tidal Flow: flowing lines fill the sheet, with the number, the title, the place and date, and a signature along the bottom edge."></div>
+                <figcaption><strong>The plot.</strong> Piece 1 of 25, with its title block: number, title, place, date and your signature, drawn by the pen.</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="journey__pic"><x-img name="mockup-square" sizes="(min-width: 900px) 300px, 80vw" alt="The same piece in a black frame with a mat, hung on a charcoal wall."></div>
+                <figcaption><strong>The mockup.</strong> The same piece, matted and framed on a wall. The artwork inside is the true preview, pixel for pixel.</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="journey__pic journey__pic--sheet"><x-img name="certificate" sizes="(min-width: 900px) 300px, 80vw" alt="A certificate of authenticity for Tidal Flow, piece 1 of 25: the seed, machine, paper and pens, a hash, a signature and a QR code."></div>
+                <figcaption><strong>The certificate.</strong> As a PDF, and as a page the plotter draws. The QR code carries the piece's provenance hash.</figcaption>
+              </figure>
+            </li>
+          </ol>
+
+          <figure class="wide">
+            <x-img name="mockup-wall" sizes="(min-width: 1200px) 1120px, 92vw" alt="Tidal Flow, piece 1 of 25, in an oak frame with a cream mat on a warm plaster wall.">
+            <figcaption>Drawn from numbers, not photographed: frame, mat, wall and light are computed, so every listing picture matches the plot.</figcaption>
+          </figure>
+
+          <ul class="cards">
+            <li>
+              <h3>Editions</h3>
+              <p>Set the size and how the pieces vary. Piece 3 of 50 is the same drawing on every computer, this year and next.</p>
+            </li>
+            <li>
+              <h3>Signature and title block</h3>
+              <p>Sign once with a mouse or a tablet. It is plotted as a single line under every piece, and kept on your computer.</p>
+            </li>
+            <li>
+              <h3>Certificates of authenticity</h3>
+              <p>One per piece, with its seed, machine, paper and pens, and a hash a buyer can check.</p>
+            </li>
+            <li>
+              <h3>Proof sheets</h3>
+              <p>A contact sheet of variants with their seeds, for a client to choose from before you ink anything.</p>
+            </li>
+            <li>
+              <h3>Framed mockups</h3>
+              <p>Square, portrait or wall-wide. Oak, walnut, black or white. Four walls. Ready for a listing.</p>
+            </li>
+            <li>
+              <h3>CSV batch</h3>
+              <p>Two hundred wedding maps from one spreadsheet: a row is a piece, with its own names, date and place.</p>
+            </li>
+            <li>
+              <h3>Costing and quotes</h3>
+              <p>Machine time, ink, paper and frame add up to a price, and to a one-page quote for a commission.</p>
+            </li>
+            <li>
+              <h3>Borders</h3>
+              <p>A plotted border on a pen of its own, set by its margin from the drawing or by its size.</p>
+            </li>
+          </ul>
+
+          <div class="split split--media">
+            <figure class="files files--paper">
+              <figcaption>One piece of the export set</figcaption>
+              <ul>
+                <li>01-of-25/01-of-25.svg</li>
+                <li>01-of-25/01-of-25.json</li>
+                <li>01-of-25/01-of-25-1-000000-0-3-mm.g</li>
+                <li>01-of-25/01-of-25-2-title-block.g</li>
+                <li>01-of-25/01-of-25-certificate.pdf</li>
+                <li>01-of-25/01-of-25-certificate.svg</li>
+                <li>edition.json</li>
+              </ul>
+            </figure>
+            <div class="cta">
+              <p class="cta__line">Sell the edition, not just the plot.</p>
+              <a class="btn btn--pink" href="{{shop}}"><span>Get Pro</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. On-device ML (Pro) -->
+      <section id="ml" class="band" aria-labelledby="ml-title">
+        <div class="wrap">
+          <p class="eyebrow">On-device ML <span class="pro">Pro</span></p>
+          <h2 id="ml-title">A portrait with depth, from a photo that never leaves your computer</h2>
+          <p class="lede">
+            Three models read a photograph the way an artist does: where the subject is, how deep
+            the scene goes, where its lines are. Styles then hatch round the form, drop the
+            background, or follow the outlines.
+          </p>
+
+          <ol class="chain">
+            <li>
+              <figure>
+                <div class="chain__pic"><x-img name="ml-photo" sizes="160px" alt="The reference portrait: a plain figure with a round head and dark shoulders."></div>
+                <figcaption>The photo</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="chain__pic"><x-img name="ml-subject" sizes="(min-width: 900px) 200px, 40vw" alt="The subject matte: the figure in white on a black ground."></div>
+                <figcaption>Subject matte</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="chain__pic"><x-img name="ml-depth" sizes="(min-width: 900px) 200px, 40vw" alt="The depth map: the figure in pale grey, nearer than the darker ground behind."></div>
+                <figcaption>Depth map</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="chain__pic chain__pic--sheet"><x-img name="relief" sizes="(min-width: 900px) 200px, 40vw" alt="The portrait drawn in the Depth relief style: hatching that wraps round the head and shoulders."></div>
+                <figcaption>Depth relief, plotted</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="chain__pic"><x-img name="ml-lines" sizes="(min-width: 900px) 200px, 40vw" alt="The line map: the figure's outlines in white on black."></div>
+                <figcaption>Line map</figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure>
+                <div class="chain__pic chain__pic--sheet"><x-img name="edges-ml" sizes="(min-width: 900px) 200px, 40vw" alt="The portrait drawn in the Edge lines style: a few clean outlines of the head, face and shoulders."></div>
+                <figcaption>Edge lines, plotted</figcaption>
+              </figure>
+            </li>
+          </ol>
+
+          <div class="split split--media">
+            <dl class="features">
+              <div>
+                <dt>Private by design</dt>
+                <dd>The models run on your computer. A model file is downloaded once, when you ask for it. Your pictures are never uploaded.</dd>
+              </div>
+              <div>
+                <dt>Or bring your own</dt>
+                <dd>Import a depth map or a line map made elsewhere and draw from that.</dd>
+              </div>
+            </dl>
+            <div class="cta">
+              <p class="cta__line">The commission where the sitter stands clear of the background.</p>
+              <a class="btn btn--pink" href="{{shop}}"><span>Get Pro</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Free and Pro -->
+      <section id="pricing" class="band band--surface" aria-labelledby="pricing-title">
+        <div class="wrap">
+          <p class="eyebrow">Free and Pro</p>
+          <h2 id="pricing-title">Free makes the plot. Pro makes the sale.</h2>
+          <p class="lede">
+            Opening, drawing, exporting and plotting are free, and stay free. Pro adds the tools
+            for selling work, the on-device models, and the ways to automate.
+          </p>
+
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Free and Pro, feature by feature">
+            <table class="plans">
+              <thead>
+                <tr>
+                  <td></td>
+                  <th scope="col">Free</th>
+                  <th scope="col" class="plans__pro">Pro</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Open photos, SVGs and projects</th>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Every style that needs no model: from a photo, generative, scripted, terrain, maps, sound, 3D</th>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Node graph, fields and the code workspace</th>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">True-width preview, ink-risk heatmap, time estimate, path optimisation</th>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Export SVG, G-code and PNG</th>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Plot on terraPen, FluidNC and GRBL machines: Wi-Fi upload, progress, resume</th>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Standard paper and frame sizes</th>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr class="plans__only">
+                  <th scope="row">On-device ML styles: subject matte, depth, line maps</th>
+                  <td><span class="dash" aria-hidden="true"></span><span class="vh">Not included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr class="plans__only">
+                  <th scope="row">Image analysis import: your own depth and line maps</th>
+                  <td><span class="dash" aria-hidden="true"></span><span class="vh">Not included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr class="plans__only">
+                  <th scope="row">Publish: editions, signature and title block, certificates, proof sheets, mockups, CSV batch, costing and quotes</th>
+                  <td><span class="dash" aria-hidden="true"></span><span class="vh">Not included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr class="plans__only">
+                  <th scope="row">Border layer</th>
+                  <td><span class="dash" aria-hidden="true"></span><span class="vh">Not included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr class="plans__only">
+                  <th scope="row">Command line, for scripts and batch jobs</th>
+                  <td><span class="dash" aria-hidden="true"></span><span class="vh">Not included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+                <tr class="plans__only">
+                  <th scope="row">MCP server, for AI agents</th>
+                  <td><span class="dash" aria-hidden="true"></span><span class="vh">Not included</span></td>
+                  <td><svg class="tick" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8.5l3.5 3.5 7.5-8"/></svg><span class="vh">Included</span></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="row">Price</th>
+                  <td class="plans__price">£0</td>
+                  <!-- TODO(REL-5): the price is not decided (docs/07-M6-PLAN.md §4.5, open question 1). Do not invent one. -->
+                  <td class="plans__price">£XX</td>
+                </tr>
+                <tr>
+                  <th scope="row">Updates</th>
+                  <td>Every release</td>
+                  <!-- TODO(REL-5): how long a key's updates run is not decided (§4.5, open question 1). -->
+                  <td>Until the date on your key: XX months</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div id="buy" class="buy">
+            <div>
+              <p class="buy__line">Pro is a licence key, checked on your computer. No trial: Free is the real thing, with no time limit.</p>
+              <p class="fine">
+                Pro is not on sale yet. Its price, and how long a key's updates run, will be set
+                before TerraGen 1.0. The £XX and XX above are placeholders.
+              </p>
+            </div>
+            <div class="actions">
+              <a class="btn btn--pink" href="{{shop}}"><span>Get Pro</span></a>
+              <a class="btn btn--ghost" href="#download"><span>Download free</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Audiences -->
+      <section id="who" class="band" aria-labelledby="who-title">
+        <div class="wrap">
+          <p class="eyebrow">Who it is for</p>
+          <h2 id="who-title">Three kinds of plotter people</h2>
+          <ul class="people">
+            <li>
+              <div class="people__pic"><x-img name="mockup-portrait" sizes="(min-width: 900px) 360px, 92vw" alt="Piece 7 of 25 of Tidal Flow in a walnut frame on a sage wall."></div>
+              <h3>Artists who sell</h3>
+              <p>Editions, commissions, fairs, Etsy. Pieces you can repeat, proof sheets a client can sign off, certificates a buyer can check, and a price that covers your pens.</p>
+            </li>
+            <li>
+              <div class="people__pic people__pic--sheet"><x-img name="sketch" sizes="(min-width: 900px) 360px, 92vw" alt="A portrait in the Sketch style: loose wandering strokes that gather where the picture is dark."></div>
+              <h3>A great plot tonight</h3>
+              <p>You have a plotter and a photo. Pick a style, check the ink, press Plot. No graph, no code, unless you want them.</p>
+            </li>
+            <li>
+              <div class="people__pic people__pic--sheet"><x-img name="wovenlines" sizes="(min-width: 900px) 360px, 92vw" alt="Threads woven over and under each other across the whole sheet, drawn by a script."></div>
+              <h3>Creative coders</h3>
+              <p>Seeds, live sliders, a node graph and a script editor. With Pro, a command line and an MCP server, so a script or an agent can drive the same commands the app uses.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Journal -->
+      <section id="journal" class="band band--surface" aria-labelledby="journal-title">
+        <div class="wrap">
+          <p class="eyebrow">From the journal</p>
+          <h2 id="journal-title">Notes from the plotting table</h2>
+          <p class="lede">Nothing here yet. The journal opens with TerraGen 1.0.</p>
+          <!-- TODO(REL-5): the journal. These are the kinds of post planned, not posts. -->
+          <ul class="journal">
+            <li><span class="journal__soon">Soon</span><h3>Release notes</h3><p>What changed, and what it means for a plot.</p></li>
+            <li><span class="journal__soon">Soon</span><h3>Pens and papers</h3><p>Measured ink limits, so the heatmap stops guessing.</p></li>
+            <li><span class="journal__soon">Soon</span><h3>How a style is made</h3><p>From a paper to a graph to a line on the page.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Download -->
+      <section id="download" class="band band--lime" aria-labelledby="download-title">
+        <div class="wrap">
+          <h2 id="download-title">Get TerraGen</h2>
+          <p class="lede">
+            TerraGen 1.0 is not out yet. When it is, the installers will be here, and the web build
+            will run in your browser with nothing to install.
+          </p>
+          <ul class="get">
+            <!--#downloads-->
+            <li class="get__item">
+              <h3>Browser</h3>
+              <a class="btn btn--ink" href="{{app}}"><span>Try in browser</span></a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!--#footer-->
+  </body>
+</html>

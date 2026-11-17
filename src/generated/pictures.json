@@ -1,0 +1,338 @@
+{
+  "certificate": {
+    "width": 1389,
+    "height": 1965,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/certificate-420.webp"
+      },
+      {
+        "width": 800,
+        "src": "/img/pictures/certificate-800.webp"
+      }
+    ]
+  },
+  "cmy": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/cmy-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/cmy-724.webp"
+      }
+    ]
+  },
+  "edges-ml": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/edges-ml-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/edges-ml-724.webp"
+      }
+    ]
+  },
+  "flow-3-pens": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/flow-3-pens-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/flow-3-pens-724.webp"
+      }
+    ]
+  },
+  "graph": {
+    "width": 764,
+    "height": 736,
+    "sources": [
+      {
+        "width": 480,
+        "src": "/img/pictures/graph-480.webp"
+      },
+      {
+        "width": 764,
+        "src": "/img/pictures/graph-764.webp"
+      }
+    ]
+  },
+  "hedcut": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/hedcut-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/hedcut-724.webp"
+      }
+    ]
+  },
+  "ink-heat": {
+    "width": 640,
+    "height": 360,
+    "sources": [
+      {
+        "width": 480,
+        "src": "/img/pictures/ink-heat-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/img/pictures/ink-heat-640.webp"
+      }
+    ]
+  },
+  "ink-plain": {
+    "width": 640,
+    "height": 360,
+    "sources": [
+      {
+        "width": 480,
+        "src": "/img/pictures/ink-plain-480.webp"
+      },
+      {
+        "width": 640,
+        "src": "/img/pictures/ink-plain-640.webp"
+      }
+    ]
+  },
+  "ml-depth": {
+    "width": 480,
+    "height": 640,
+    "sources": [
+      {
+        "width": 320,
+        "src": "/img/pictures/ml-depth-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/img/pictures/ml-depth-480.webp"
+      }
+    ]
+  },
+  "ml-lines": {
+    "width": 480,
+    "height": 640,
+    "sources": [
+      {
+        "width": 320,
+        "src": "/img/pictures/ml-lines-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/img/pictures/ml-lines-480.webp"
+      }
+    ]
+  },
+  "ml-photo": {
+    "width": 160,
+    "height": 213,
+    "sources": [
+      {
+        "width": 160,
+        "src": "/img/pictures/ml-photo-160.webp"
+      }
+    ]
+  },
+  "ml-subject": {
+    "width": 480,
+    "height": 640,
+    "sources": [
+      {
+        "width": 320,
+        "src": "/img/pictures/ml-subject-320.webp"
+      },
+      {
+        "width": 480,
+        "src": "/img/pictures/ml-subject-480.webp"
+      }
+    ]
+  },
+  "mockup-portrait": {
+    "width": 1080,
+    "height": 1350,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/mockup-portrait-420.webp"
+      },
+      {
+        "width": 800,
+        "src": "/img/pictures/mockup-portrait-800.webp"
+      }
+    ]
+  },
+  "mockup-square": {
+    "width": 1080,
+    "height": 1080,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/mockup-square-420.webp"
+      },
+      {
+        "width": 800,
+        "src": "/img/pictures/mockup-square-800.webp"
+      }
+    ]
+  },
+  "mockup-wall": {
+    "width": 1920,
+    "height": 1280,
+    "sources": [
+      {
+        "width": 640,
+        "src": "/img/pictures/mockup-wall-640.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/img/pictures/mockup-wall-1280.webp"
+      },
+      {
+        "width": 1920,
+        "src": "/img/pictures/mockup-wall-1920.webp"
+      }
+    ]
+  },
+  "noiserings": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/noiserings-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/noiserings-724.webp"
+      }
+    ]
+  },
+  "piece-1": {
+    "width": 595,
+    "height": 842,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/piece-1-420.webp"
+      },
+      {
+        "width": 595,
+        "src": "/img/pictures/piece-1-595.webp"
+      }
+    ]
+  },
+  "proof-sheet": {
+    "width": 1260,
+    "height": 1782,
+    "sources": [
+      {
+        "width": 480,
+        "src": "/img/pictures/proof-sheet-480.webp"
+      },
+      {
+        "width": 900,
+        "src": "/img/pictures/proof-sheet-900.webp"
+      }
+    ]
+  },
+  "relief": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/relief-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/relief-724.webp"
+      }
+    ]
+  },
+  "ridgelines": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/ridgelines-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/ridgelines-724.webp"
+      }
+    ]
+  },
+  "sketch": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/sketch-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/sketch-724.webp"
+      }
+    ]
+  },
+  "spectrogram": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/spectrogram-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/spectrogram-724.webp"
+      }
+    ]
+  },
+  "turtletree": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/turtletree-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/turtletree-724.webp"
+      }
+    ]
+  },
+  "wovenlines": {
+    "width": 724,
+    "height": 1024,
+    "sources": [
+      {
+        "width": 420,
+        "src": "/img/pictures/wovenlines-420.webp"
+      },
+      {
+        "width": 724,
+        "src": "/img/pictures/wovenlines-724.webp"
+      }
+    ]
+  }
+}

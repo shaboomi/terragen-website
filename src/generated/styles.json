@@ -1,0 +1,740 @@
+[
+  {
+    "id": "arrows",
+    "name": "Arrows",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/arrows.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "attractor",
+    "name": "Strange attractor",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/attractor.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "checker",
+    "name": "Checker",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/checker.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "hatched-shading",
+    "name": "Hatched shading",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/hatched-shading.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "cmy",
+    "name": "CMY screens",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/cmy.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "boids",
+    "name": "Boids trails",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/boids.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "contours",
+    "name": "Contours",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/contours.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "noiserings",
+    "name": "Noise rings",
+    "category": "scripted",
+    "group": "Scripted",
+    "src": "/img/styles/noiserings.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "crosshatch",
+    "name": "Cross-hatch",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/crosshatch.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "circlepack",
+    "name": "Circle packing",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/circlepack.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "crystal",
+    "name": "Crystal",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/crystal.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "dither",
+    "name": "Dither",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/dither.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "hidden-lines",
+    "name": "Hidden lines",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/hidden-lines.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "colonise",
+    "name": "Space colonisation tree",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/colonise.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "edges",
+    "name": "Edge lines",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/edges.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "engrave",
+    "name": "Engraving",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/engrave.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "diffgrowth",
+    "name": "Differential growth",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/diffgrowth.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "etch",
+    "name": "Etch",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/etch.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "flow",
+    "name": "Flow field",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/flow.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "lissajous",
+    "name": "Stereo Lissajous",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/lissajous.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "dla",
+    "name": "Diffusion-limited aggregation",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/dla.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "growthfill",
+    "name": "Differential growth",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/growthfill.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "hair",
+    "name": "Hair and fur",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/hair.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "recursivesquares",
+    "name": "Recursive squares",
+    "category": "scripted",
+    "group": "Scripted",
+    "src": "/img/styles/recursivesquares.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "halftone",
+    "name": "Halftone",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/halftone.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "guilloche",
+    "name": "Guilloche rosettes",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/guilloche.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "hatch",
+    "name": "Hatch",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/hatch.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "harmonograph",
+    "name": "Harmonograph",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/harmonograph.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "hedcut",
+    "name": "Hedcut",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/hedcut.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "map-in-pens",
+    "name": "Map in pens",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/map-in-pens.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "lbg",
+    "name": "LBG stipple",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/lbg.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "interference",
+    "name": "Wave interference",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/interference.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "letters",
+    "name": "Letters",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/letters.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "lic",
+    "name": "Line integral convolution",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/lic.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "lsystem",
+    "name": "L-system",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/lsystem.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "mosaic",
+    "name": "Mosaic",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/mosaic.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "ridgelines",
+    "name": "Ridgelines",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/ridgelines.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "opposing",
+    "name": "Opposing lines",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/opposing.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "maze",
+    "name": "Maze",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/maze.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "pixels",
+    "name": "Pixels",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/pixels.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "rdfill",
+    "name": "Reaction-diffusion",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/rdfill.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "startiling",
+    "name": "Star tiling",
+    "category": "scripted",
+    "group": "Scripted",
+    "src": "/img/styles/startiling.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "relief",
+    "name": "Depth relief",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/relief.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "moire",
+    "name": "Moire grids",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/moire.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "ridges",
+    "name": "Ridges",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/ridges.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "silhouette",
+    "name": "Silhouette",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/silhouette.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "rings",
+    "name": "Concentric circles",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/rings.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "noiseflow",
+    "name": "Noise flow",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/noiseflow.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "scribble",
+    "name": "Scribble",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/scribble.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "sketch",
+    "name": "Sketch",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/sketch.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "penrose",
+    "name": "Penrose tiling",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/penrose.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "spacefill",
+    "name": "Space-filling curve",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/spacefill.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "spectrogram",
+    "name": "Spectrogram",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/spectrogram.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "spiral",
+    "name": "Spiral",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/spiral.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "physarum",
+    "name": "Physarum trails",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/physarum.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "squares",
+    "name": "Squares",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/squares.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "turtletree",
+    "name": "Turtle tree",
+    "category": "scripted",
+    "group": "Scripted",
+    "src": "/img/styles/turtletree.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "squiggle",
+    "name": "Squiggle",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/squiggle.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "reaction",
+    "name": "Reaction-diffusion",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/reaction.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "stars",
+    "name": "Stars",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/stars.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "stipple",
+    "name": "Stipple",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/stipple.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "rose",
+    "name": "Polar rose",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/rose.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "street-map",
+    "name": "Street map",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/street-map.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "streamhatch",
+    "name": "Flow hatch",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/streamhatch.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "suns",
+    "name": "Suns",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/suns.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "spirograph",
+    "name": "Spirograph",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/spirograph.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "tam",
+    "name": "Tonal art maps",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/tam.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "textfill",
+    "name": "Text fill",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/textfill.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "superformula",
+    "name": "Superformula",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/superformula.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "terrain-contours",
+    "name": "Terrain contours",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/terrain-contours.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "tonepack",
+    "name": "Circle packing at tone",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/tonepack.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "trace",
+    "name": "Trace",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/trace.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "timestables",
+    "name": "Times tables",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/timestables.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "triangles",
+    "name": "Triangles",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/triangles.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "wovenlines",
+    "name": "Woven lines",
+    "category": "scripted",
+    "group": "Scripted",
+    "src": "/img/styles/wovenlines.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "truchet",
+    "name": "Truchet",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/truchet.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "voronoi",
+    "name": "Voronoi cells",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/voronoi.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "tsp",
+    "name": "Single line",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/tsp.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "waveform-rings",
+    "name": "Waveform rings",
+    "category": "sources",
+    "group": "From a source",
+    "src": "/img/styles/waveform-rings.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "wavenet",
+    "name": "Wave net",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/wavenet.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "worley",
+    "name": "Worley flow",
+    "category": "generative",
+    "group": "Generative",
+    "src": "/img/styles/worley.webp",
+    "width": 283,
+    "height": 400
+  },
+  {
+    "id": "waves",
+    "name": "Waves",
+    "category": "image-tone",
+    "group": "From a photo",
+    "src": "/img/styles/waves.webp",
+    "width": 283,
+    "height": 400
+  }
+]
