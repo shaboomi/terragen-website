@@ -1,8 +1,8 @@
 {
-  "name": "@terragen/site",
+  "name": "terragen-website",
   "private": true,
   "version": "0.1.0",
-  "description": "TerraGen's marketing website: a static site (Vite, plain HTML, CSS and TypeScript).",
+  "description": "TerraGen's website: a static site (Vite, plain HTML, CSS and TypeScript).",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,17 +12,20 @@
     "test": "node scripts/contrast.mjs",
     "images": "node scripts/images.mjs",
     "contrast": "node scripts/contrast.mjs",
-    "a11y": "node scripts/a11y.mjs"
+    "a11y": "node scripts/a11y.mjs",
+    "sync": "node scripts/sync.mjs",
+    "sync:check": "node scripts/sync.mjs --check"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
-    "@fontsource/barlow": "^5.3.0",
-    "@fontsource/fjalla-one": "^5.3.0",
-    "@playwright/test": "^1.65.0",
-    "@types/node": "^26.6.6",
-    "marked": "^18.2.0",
-    "sharp": "^0.35.5",
-    "typescript": "^6.0.3",
-    "vite": "^8.3.6"
-  }
+    "@fontsource/barlow": "5.3.0",
+    "@fontsource/fjalla-one": "5.3.0",
+    "@playwright/test": "1.65.0",
+    "@types/node": "26.6.6",
+    "marked": "18.2.0",
+    "sharp": "0.35.5",
+    "typescript": "6.0.3",
+    "vite": "8.3.6"
+  },
+  "packageManager": "pnpm@12.18.0"
 }

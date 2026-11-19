@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "additionalDirectories": ["C:\\Users\\rmars\\Documents\\TerraGen"],
+    "deny": [
+      "Edit(../TerraGen/**)",
+      "Edit(//c/Users/rmars/Documents/TerraGen/**)"
+    ]
+  }
+}

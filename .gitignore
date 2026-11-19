@@ -1,2 +1,5 @@
-
+node_modules/
+dist/
 .render/
+.claude/settings.local.json
+.claude/worktrees/

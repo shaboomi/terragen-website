@@ -1,6 +1,6 @@
 // Builds the site, serves the build and runs axe-core (WCAG 2.2 A and AA) on
 // every page at a phone's and a desktop's width, with and without reduced
-// motion. `pnpm -C site a11y`; fails on any violation.
+// motion. `pnpm a11y`; fails on any violation.
 //
 // With `--shots <folder>` it also saves a picture of each section of the home
 // page at both widths (the pull request's screenshots).

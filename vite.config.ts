@@ -11,7 +11,6 @@ import { LINKS } from "./links.ts";
 // stroke, the attribution page) from the files they come from.
 
 const site = dirname(fileURLToPath(import.meta.url));
-const repo = resolve(site, "..");
 
 interface Style {
   id: string;
@@ -62,7 +61,7 @@ function images(html: string, pictures: Record<string, Picture>): string {
     );
     const name = attrs.name ?? "";
     const picture = pictures[name];
-    if (!picture) throw new Error(`no picture called "${name}" (pnpm -C site images)`);
+    if (!picture) throw new Error(`no picture called "${name}" (pnpm images)`);
     const widest = picture.sources[picture.sources.length - 1];
     if (!widest) throw new Error(`the picture "${name}" has no files`);
     const srcset = picture.sources.map((s) => `${s.src} ${s.width}w`).join(", ");
@@ -84,9 +83,12 @@ function hero(): string {
   return `<svg class="hero-plot" viewBox="${viewBox}" role="img" aria-label="A harmonograph: one unbroken line looping into a figure of crossed ellipses."><path pathLength="1" d="${d}"/></svg>`;
 }
 
-/** ATTRIBUTION.md, as the page. It is our own file, so its HTML is trusted. */
+/**
+ * ATTRIBUTION.md, as the page. It is TerraGen's own file, copied into
+ * content/ by `pnpm sync`, so its HTML is trusted.
+ */
 function attribution(): string {
-  const text = readFileSync(resolve(repo, "ATTRIBUTION.md"), "utf8");
+  const text = readFileSync(resolve(site, "content", "ATTRIBUTION.md"), "utf8");
   // The page has its own h1: drop the file's.
   const body = text.replace(/^# .*\n/, "");
   const html = marked.parse(body, { async: false, gfm: true });

@@ -1,20 +1,22 @@
 // Makes the pictures the site ships: WebP files in public/img/ and the lists
 // in src/generated/ that the pages are built from. Both are committed, so the
-// site builds without this script; run it again (`pnpm -C site images`) when a
+// site builds without this script; run it again (`pnpm images`) when a
 // golden picture, a style or a render changes.
 //
-// Sources, all TerraGen's own output:
+// Sources, all TerraGen's own output, read from the TerraGen checkout
+// (`scripts/terragen.mjs`: TERRAGEN_DIR, else ../TerraGen):
 //   - testdata/golden/**            the picture of every built-in style
 //   - styles/**                     each style's name and category
-//   - site/.render/                 larger renders (`bash site/scripts/render.sh`)
+//   - .render/                      larger renders (`bash scripts/render.sh`)
 //   - docs/screenshots/, testdata/  the app's graph editor; the ML fixtures
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
+import { terragen } from "./terragen.mjs";
 
 const site = join(dirname(fileURLToPath(import.meta.url)), "..");
-const repo = join(site, "..");
+const repo = terragen();
 const out = join(site, "public", "img");
 const generated = join(site, "src", "generated");
 const render = join(site, ".render");

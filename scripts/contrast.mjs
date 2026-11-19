@@ -1,7 +1,7 @@
 // Checks every colour pair the site uses against WCAG 2 contrast (AA):
 // 4.5:1 for text, 3:1 for large text (24px, or 18.66px bold) and for the
 // edges of controls. Reads the tokens from src/styles.css, so the check is of
-// the colours that ship. `pnpm -C site contrast`; fails on a pair below its bar.
+// the colours that ship. `pnpm contrast`; fails on a pair below its bar.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 

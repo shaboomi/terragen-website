@@ -1,0 +1,13 @@
+packages:
+  - .
+
+# Install scripts we have looked at and do not run.
+allowBuilds:
+  # sharp (the picture script, `pnpm images`): its install script only builds
+  # from source when no prebuilt binary came with it.
+  sharp: false
+
+# playwright-core under @axe-core/playwright: the same as @playwright/test, so
+# one browser download serves both.
+overrides:
+  playwright-core: 1.65.0

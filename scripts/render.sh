@@ -1,14 +1,20 @@
 #!/usr/bin/env bash
-# Draws the website's larger pictures with TerraGen itself, into site/.render/
-# (git-ignored). `pnpm -C site images` then turns them, and the golden
-# pictures, into the WebP files the site ships (site/public/img/, committed).
+# Draws the website's larger pictures with TerraGen itself, into .render/
+# (git-ignored). `pnpm images` then turns them, and the golden pictures, into
+# the WebP files the site ships (public/img/, committed).
 #
-# Run from the repository root:  bash site/scripts/render.sh
+# Run from this repository's root:  bash scripts/render.sh
+# It runs TerraGen's command line in the TerraGen checkout (TERRAGEN_DIR, else
+# ../TerraGen) and only reads that checkout: nothing there is changed.
 # Every picture is real output: the reference portrait, the fixtures in
 # testdata/ and the M5 demo edition. Nothing is plotted or uploaded.
 set -euo pipefail
 
-OUT=site/.render
+SITE=$(cd "$(dirname "$0")/.." && pwd)
+TERRAGEN_DIR=${TERRAGEN_DIR:-$SITE/../TerraGen}
+[ -f "$TERRAGEN_DIR/Cargo.toml" ] || { echo "no TerraGen checkout at $TERRAGEN_DIR (set TERRAGEN_DIR)" >&2; exit 1; }
+OUT=$SITE/.render
+cd "$TERRAGEN_DIR"
 mkdir -p "$OUT"
 T="cargo xtask terragen"
 P=testdata/images/portrait-small.jpg
