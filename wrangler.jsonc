@@ -1,0 +1,9 @@
+{
+	// Cloudflare Worker config: the built site (pnpm build → dist/) served as
+	// static assets, as the Shiboomi site is. Live at terragen.shiboomi.design.
+	"name": "terragen-website",
+	"compatibility_date": "2026-11-01",
+	"assets": {
+		"directory": "./dist"
+	}
+}
