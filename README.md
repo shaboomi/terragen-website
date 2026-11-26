@@ -23,6 +23,28 @@ update window in the comparison table are `£XX` and `XX` placeholders.
 - `pnpm sync`: copy TerraGen's `ATTRIBUTION.md` into `content/` (`pnpm sync:check` says whether it is out of date)
 - `bash scripts/render.sh`, then `pnpm images`: draw the pictures again
 
+## The move to Sanity (not yet live)
+
+`web/` is the same site in Next.js, with its copy in Sanity (project
+`7s3gavgn`, dataset `production`); `studio/` is the Sanity Studio that edits
+it. The static site described above is still the one that is deployed.
+
+- Install: `pnpm --dir studio install --ignore-workspace` and `npm --prefix web install`
+- `npm --prefix studio run dev`: the Studio (port 3333; the preview in `.claude/launch.json` uses 3334, also an allowed CORS origin)
+- `npm --prefix web run dev`: the app (port 3000); first copy `web/.env.example` to `web/.env.local`
+- `npm --prefix web run build`, `npm --prefix web run lint`
+- `npm --prefix studio run typegen`: regenerate `web/sanity.types.ts` after a schema or query change
+- In `studio/`, `npx sanity schemas deploy` after a schema change
+
+In Sanity: the header, footer, home page copy, alternative text and privacy
+statement. In the code: the pictures and the style wall, the code and file
+samples, short interface labels, the addresses (`links.ts`) and the whole
+attribution page. `web/scripts/assets.mjs` copies what the two sites share
+(the stylesheet, pictures, licences, `links.ts`, `ATTRIBUTION.md`) from the
+root before each build, so edit those at the root. Pages are set to
+revalidate after a minute, so a published change should show soon after (not
+yet tried end to end).
+
 ## TerraGen
 
 The build needs nothing from TerraGen: the pictures (`public/img/`, `src/generated/`)
