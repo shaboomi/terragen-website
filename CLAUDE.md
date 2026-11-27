@@ -1,6 +1,6 @@
 # TerraGen Website — Agent Guide
 
-The marketing website for TerraGen (the studio for commercial pen-plotter art): a static site, Vite + plain HTML, CSS and TypeScript. No framework, no trackers, no analytics, no third-party scripts; fonts served from the site. `README.md` has the commands and how a page is put together.
+The marketing website for TerraGen (the studio for commercial pen-plotter art): live at terragen.shiboomi.design from `web/` (Next.js, copy in Sanity, Studio in `studio/`) on Cloudflare. The static Vite site at the root is its predecessor and still the source of the shared stylesheet, pictures and links. No trackers, no analytics, no third-party scripts; fonts served from the site. `README.md` has the commands and how a page is put together.
 
 ## The TerraGen project (read-only)
 

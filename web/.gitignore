@@ -50,3 +50,9 @@ next-env.d.ts
 /public/licences/
 /public/favicon.svg
 /public/robots.txt
+/public/_headers
+
+# cloudflare
+/.open-next/
+/.wrangler/
+.dev.vars

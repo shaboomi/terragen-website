@@ -1,0 +1,29 @@
+{
+	// Cloudflare Worker for the Next.js app, built by @opennextjs/cloudflare.
+	// Live at terragen.shiboomi.design; its workers.dev address stays as a copy
+	// that search engines are told to skip (next.config.ts). The old static
+	// site's Worker, "terragen-website" (../wrangler.jsonc), is the way back.
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "terragen-web",
+	"main": ".open-next/worker.js",
+	"compatibility_date": "2026-11-01",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"workers_dev": true,
+	"routes": [{ "pattern": "terragen.shiboomi.design", "custom_domain": true }],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	// The Worker calls itself to redraw a page in the background.
+	"services": [{ "binding": "WORKER_SELF_REFERENCE", "service": "terragen-web" }],
+	// The rendered pages, kept between requests.
+	"kv_namespaces": [
+		{ "binding": "NEXT_INC_CACHE_KV", "id": "2144dfcea6054d35acc1d15de22def27" }
+	],
+	// The queue that redraws a page once it is a minute old.
+	"durable_objects": {
+		"bindings": [{ "name": "NEXT_CACHE_DO_QUEUE", "class_name": "DOQueueHandler" }]
+	},
+	"migrations": [{ "tag": "v1", "new_sqlite_classes": ["DOQueueHandler"] }],
+	"observability": { "enabled": true }
+}

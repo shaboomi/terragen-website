@@ -20,7 +20,9 @@ mkdirSync(generated, { recursive: true });
 mkdirSync(join(pub, "fonts"), { recursive: true });
 
 copy(join(root, "src", "generated"), generated);
-copy(join(root, "content", "ATTRIBUTION.md"), join(generated, "ATTRIBUTION.md"));
+// As a module, not a file read while running: a Worker has no project files.
+const attribution = readFileSync(join(root, "content", "ATTRIBUTION.md"), "utf8");
+writeFileSync(join(generated, "attribution.json"), JSON.stringify({ markdown: attribution }));
 copy(join(root, "links.ts"), join(generated, "links.ts"));
 for (const name of ["img", "licences", "favicon.svg", "robots.txt"]) {
   copy(join(root, "public", name), join(pub, name));
@@ -33,3 +35,12 @@ const css = readFileSync(join(root, "src", "styles.css"), "utf8").replace(FONT, 
   return `/fonts/${file}`;
 });
 writeFileSync(join(generated, "styles.css"), css);
+
+// Cloudflare serves public/ and the build's files without running the app, so
+// next.config.ts's headers do not reach them: the static site's _headers, and
+// Next's hashed files kept for good.
+const headers = readFileSync(join(root, "public", "_headers"), "utf8");
+writeFileSync(
+  join(pub, "_headers"),
+  `${headers.trimEnd()}\n\n/_next/static/*\n  Cache-Control: public, max-age=31536000, immutable\n`,
+);

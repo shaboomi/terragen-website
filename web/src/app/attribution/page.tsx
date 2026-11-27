@@ -1,7 +1,6 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
 import { marked } from "marked";
 import type { Metadata } from "next";
+import source from "@/generated/attribution.json";
 
 // Not in Sanity: this page says what TerraGen's own record says.
 
@@ -43,9 +42,8 @@ const INTRO = `
  * `pnpm sync`, so its HTML is trusted.
  */
 function attribution(): string {
-  const text = readFileSync(join(process.cwd(), "src", "generated", "ATTRIBUTION.md"), "utf8");
   // The page has its own h1: drop the file's.
-  const html = marked.parse(text.replace(/^# .*\n/, ""), { async: false, gfm: true });
+  const html = marked.parse(source.markdown.replace(/^# .*\n/, ""), { async: false, gfm: true });
   // A wide table scrolls in its own box, which a keyboard must be able to reach.
   let tables = 0;
   return html

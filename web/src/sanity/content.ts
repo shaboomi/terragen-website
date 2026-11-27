@@ -1,9 +1,9 @@
 import { defineQuery } from "next-sanity";
-import { cacheLife } from "next/cache";
 import { client } from "./client";
 
 // Each document is a singleton whose ID is its type's name. A page is kept for
 // about a minute, then fetched again behind the next visit.
+const CACHE = { next: { revalidate: 60 } };
 
 const SETTINGS_QUERY = defineQuery(`*[_type == "siteSettings" && _id == "siteSettings"][0]`);
 const HOME_QUERY = defineQuery(`*[_type == "homePage" && _id == "homePage"][0]`);
@@ -15,21 +15,15 @@ function published<T>(document: T | null, id: string): T {
 }
 
 export async function getSettings() {
-  "use cache";
-  cacheLife("minutes");
-  return published(await client.fetch(SETTINGS_QUERY), "siteSettings");
+  return published(await client.fetch(SETTINGS_QUERY, {}, CACHE), "siteSettings");
 }
 
 export async function getHome() {
-  "use cache";
-  cacheLife("minutes");
-  return published(await client.fetch(HOME_QUERY), "homePage");
+  return published(await client.fetch(HOME_QUERY, {}, CACHE), "homePage");
 }
 
 export async function getPrivacy() {
-  "use cache";
-  cacheLife("minutes");
-  return published(await client.fetch(PRIVACY_QUERY), "privacyPage");
+  return published(await client.fetch(PRIVACY_QUERY, {}, CACHE), "privacyPage");
 }
 
 export type Home = Awaited<ReturnType<typeof getHome>>;
