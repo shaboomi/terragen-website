@@ -2,8 +2,7 @@ import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  // No cacheComponents: on Cloudflare its pages are never refreshed.
   // The site's addresses are /privacy/ and /attribution/.
   trailingSlash: true,
   poweredByHeader: false,
@@ -18,6 +17,12 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "DENY" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         ],
+      },
+      // The test address is not for search engines.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: ".*\\.workers\\.dev" }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
       },
       {
         source: "/img/:path*",

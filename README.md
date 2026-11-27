@@ -4,13 +4,14 @@ The website for [TerraGen](https://github.com/shaboomi/terraGen), the studio for
 commercial pen-plotter art. It was built in TerraGen's repository as `site/`
 (M6 step 37, `REL-5`) and moved here with its history on 2026-11-19.
 
-A static site: Vite, plain HTML, CSS and TypeScript. No framework, no
-trackers, no analytics, no third-party scripts; the fonts are served from the
-site. Three pages: the home page, `privacy/` and `attribution/` (built from
+The live site is the Next.js app in `web/`, with its copy in Sanity (see "The
+live site" below). The static Vite site at the root is its predecessor and the
+source of what the two share. No trackers, no analytics, no third-party
+scripts; the fonts are served from the site. Three pages: the home page, `privacy/` and `attribution/` (built from
 TerraGen's `ATTRIBUTION.md`, copied into `content/`).
 
-**Nothing is deployed.** The domain, the host, the shop and the installers do
-not exist yet (TerraGen's `docs/07-M6-PLAN.md` step 37 and §4.5). Every address the site
+**Live at terragen.shiboomi.design.** The shop and the installers do not exist
+yet (TerraGen's `docs/07-M6-PLAN.md` step 37 and §4.5). Every address the site
 is waiting for is in `links.ts`, each with a `TODO(REL-5)`; the price and the
 update window in the comparison table are `£XX` and `XX` placeholders.
 
@@ -23,11 +24,11 @@ update window in the comparison table are `£XX` and `XX` placeholders.
 - `pnpm sync`: copy TerraGen's `ATTRIBUTION.md` into `content/` (`pnpm sync:check` says whether it is out of date)
 - `bash scripts/render.sh`, then `pnpm images`: draw the pictures again
 
-## The move to Sanity (not yet live)
+## The live site
 
 `web/` is the same site in Next.js, with its copy in Sanity (project
 `7s3gavgn`, dataset `production`); `studio/` is the Sanity Studio that edits
-it. The static site described above is still the one that is deployed.
+it. It has been served at terragen.shiboomi.design since 2026-11-27.
 
 - Install: `pnpm --dir studio install --ignore-workspace` and `npm --prefix web install`
 - `npm --prefix studio run dev`: the Studio (port 3333; the preview in `.claude/launch.json` uses 3334, also an allowed CORS origin)
@@ -44,6 +45,17 @@ attribution page. `web/scripts/assets.mjs` copies what the two sites share
 root before each build, so edit those at the root. Pages are set to
 revalidate after a minute, so a published change should show soon after (not
 yet tried end to end).
+
+**Cloudflare:** `web/wrangler.jsonc` is the live Worker, `terragen-web`; the
+old static site's Worker (`wrangler.jsonc` at the root) is still deployed, with
+no custom domain, to go back to. `npm --prefix web run preview` runs the build in the Workers runtime
+here, and `npm --prefix web run deploy` publishes it (after
+`npx wrangler login` in `web/`; the owner's yes first). Rendered pages are kept
+in Workers KV and redrawn by a Durable Object queue
+(`web/open-next.config.ts`). There a page is redrawn on a visit once it is a
+minute old, and KV takes up to another minute to pass the new copy on, so allow
+a few minutes for an edit. Next.js's Cache Components stay off: with them the
+pages were never refreshed in the Workers runtime.
 
 ## TerraGen
 

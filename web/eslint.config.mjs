@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     "sanity.types.ts",
     "src/generated/**",
+    ".open-next/**",
+    ".wrangler/**",
   ]),
 ]);
 
