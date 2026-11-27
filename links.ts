@@ -1,7 +1,7 @@
 // Every address the website does not have yet, in one place.
 //
-// Nothing here is live: the domain, the host, the shop and the installers do
-// not exist (docs/07-M6-PLAN.md step 37 and §4.5). A `null` is drawn as
+// The site is live; the shop and the installers do not exist yet
+// (docs/07-M6-PLAN.md step 37 and §4.5). A `null` is drawn as
 // "not released yet", never as a dead link.
 
 export const LINKS = {
